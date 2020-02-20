@@ -1,0 +1,786 @@
+/*! HTML5 Boilerplate v7.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-family: arial, helvetica, sans-serif;
+  width: 100%;
+
+  
+  /* CSS FÖR INDEX */
+}
+
+ }
+
+ body {
+  background:#FFFFFF;
+  padding: top right bottom left;
+  margin: 0;
+  overflow-x: hidden; 
+  line-height: 1.5;
+   
+} 
+
+/*logga*/
+.logo {
+  width: 4rem;
+    padding: 1em;
+ grid-column: 1;
+  
+
+}
+/* bakgrundsbild (flygplan) */
+.home-body {
+  background-image: url(https://image.freepik.com/free-photo/airplane-flying-cloudy-sky_144627-132.jpg);
+  background-size: cover;
+
+
+}
+
+h1 {
+
+  color:black;
+  text-align:left;
+  margin-top: 2em;
+  top:-50px;  
+  left:460px;
+  font-size:30px;
+
+}
+
+}
+
+.header {
+   padding-right: 1%;
+  padding-left: 0px;
+  margin: auto;
+  
+  
+}
+
+.slogan {
+  font-size: 50px;
+  color: black;
+  text-align: left;
+}
+/* rubrik "Resor och Hotell till låga priser */
+.rubrik {
+  font-size: 30px;
+  color: black;
+  text-align: left;
+  margin-top: 0em;
+
+}
+
+p /* slogan */{
+
+  color:black;
+  text-align:left;
+  margin-top: 3em;
+  top:1rem; 
+  left:400px;
+  font-size:40px;
+  width: 100%;
+
+}
+
+.knapp /* vid höger sida */{
+  color: white; 
+  background-color: black;
+  text-align: right;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column: auto;
+  left: 60px; 
+  float: right;
+    border-radius: 5px;
+  border-style: none;
+  margin-top: -5em;
+  margin-right: 60px; 
+  padding: 1rem 2rem;
+
+  
+}
+
+body, html {
+  height: 90%;
+  margin:0;
+  padding: 0;
+  font-family: arial;
+}
+
+/*Knapp nedanför "Resor och hotell för låga priser" samt för "boka" knappen i hotell och flyg */
+.btn {
+text-align: start; 
+background:black;
+color: #FFF;
+padding: 0.6rem 1.3rem;
+text-decoration: none;
+border: 0;
+justify-content: left;
+font-size:20px;
+margin:4px;
+text-align:center;
+ cursor: pointer;
+
+
+}
+
+/*navigering*/
+
+.nav {
+background-color: white;
+color:#ffffff;
+list-style: none;
+text-align: center;
+padding: 20px 0 20px 0;
+font-size: 130%;
+}
+
+.nav > li {
+display: inline-block;
+padding-right: 80px;
+background-color: white;
+grid-column: auto;
+
+}
+
+.nav-list {
+  color:black;
+  grid-column: auto;
+  padding:20px 15px 20px 15px;
+  margin: 0px;
+  font-size: 30px;
+  grid-column: auto;
+  list-style: none;
+  text-decoration: none;
+  display: inline;
+  text-align: center;
+}
+
+}
+
+.nav > li > a {
+text-decoration: none;
+color:black;
+margin:20px;
+}
+
+} 
+
+}
+
+}
+
+* {
+  box-sizing: border-box;
+
+}
+
+
+@media only screen and (max-width: 768px)
+{
+  .logo
+  {
+    height: 80px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 768px)
+{
+  .mobile_dropdown
+  {
+
+}
+
+@media screen and (min-width: 800px)
+{
+  #kontakt
+  {
+
+}
+
+
+
+/*CSS FÖR SIDAN KONTAKT*/
+
+/* ruta för att skriva in namn och efternamn */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+/* ruta för att skicka ämne */
+input[type=submit] {
+  background-color: #87CEEB;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #ADD8E6;
+}
+
+/*CSS FÖR SIDAN OM OSS*/
+
+    
+}
+
+/*style för all text*/
+
+.showcase-about h1{
+  color:black;
+  text-align:center;
+  margin-top: 1px;
+  top:2px;  
+  right:-800px;
+  font-size:40px;
+}
+
+.showcase-about article 
+h2
+h3
+h4 {
+  grid-area: article;
+  margin-top: 5em;
+  font-size: 50px;
+}
+
+}
+
+#about-text p 
+h2
+h3
+h4 {
+  grid-area: article;
+  font-size: 60px;
+  margin-top: 10em;
+  color:#FFF;
+  line-height: 10em
+  vertical-align:30em;
+  top:10px;
+  left:400px;
+  text-align:center;
+  
+
+}
+/*style för copyright/fotnot*/
+
+footer.fotnot {
+ background: white;
+ margin: 8px 5px 5px;
+ padding: 5px 5px 5px;
+ border-radius: 40px;
+ border-size:5px;
+ border: 3px solid black;
+ width: 60%;
+ position: relative;
+ margin-left: 60em;
+ outline-color: black;
+ justify-content: center;
+
+}
+
+p {
+
+color: black;
+font: 20px times;
+text-align: center;
+padding-top: 10px;
+padding-bottom: -10rem;
+line-height: 1em;
+}
+
+
+/* CSS FÖR SIDAN HOTELL OCH FLYG */
+
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 1em 0;
+  text-align: left;
+}
+
+p {
+
+    margin: 0;
+  padding: 1em 0;
+  text-align: left;
+
+}
+/* Header Showcase */
+
+#showcase {
+  min-height: 450px;
+  color: #fff;
+  text-align: center;
+}
+
+/* bakgrundsbild för bägge sidorna */
+
+#showcase .bg-image {
+  position: absolute;
+  background: #333
+    url(https://image.freepik.com/free-photo/swimming-pool_74190-6509.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+
+/* sektion A (kolumn 1)*/
+
+#section-a {
+  background: #eaeaea;
+  color: #333;
+  padding-bottom: 2em;
+}
+
+/* sektion B (kolumn 2) */
+
+#section-b {
+  padding: 2em 1em 1em;
+}
+
+#section-b ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#section-b li {
+  margin-bottom: 1em;
+  background: #fff;
+  color: #333;
+}
+
+.card-content {
+  padding: 1.5em;
+}
+
+/* Media Queries */
+
+@media (min-width: 700px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+  }
+
+  #section-a .content-text {
+    columns: 2;
+    column-gap: 2em;
+  }
+
+  #section-a .content-text p {
+    padding-top: 0;
+  }
+
+  .content-wrap,
+  #section-b ul {
+    grid-column: 2/4;
+  }
+
+  .box,
+  #main-footer div {
+    grid-column: span 2;
+  }
+
+  #section-b ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #section-b li {
+    width: 31%;
+  }
+}
+/* CSS FÖR SIDAN KONTAKT */
+.contact-page {
+  grid-area: showcase;
+  padding: 2rem;
+  background-color: black;
+}
+
+
+
+
+}
+
+.contact-page p {
+  text-align: center;
+  margin: 3em;
+}
+
+.contact-page h1 {
+  text-align: center;
+  color: black;
+  font-size: 3em;
+}
+
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+form label {
+  display: block;
+  color: black;
+  padding: 1rem 0 0.5rem 0;
+  text-transform: uppercase;
+  font-size: 1em;
+
+
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1em;
+  border-radius: 5px;
+  border-radius: orange;
+}
+
+#skickaBtn {
+  border: 0;
+  background-color: black;
+  padding: 0.5rem;
+  color: white;
+  margin: 1rem 0;
+  width: auto;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#skickaBtn:hover {
+  background-color: white;
+}
+
+
+@media screen and (max-width: 200px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+}
+
+/* Style för kontakt */
+
+/*)
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  display: grid;
+}
+
+
+.column {
+  float: left;
+  width: 45%;
+  margin-top: 30px;
+  padding: 30px;
+  height: auto;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h1 {
+
+text-align: center;
+margin-top: 10px; 
+}
+
+*/
